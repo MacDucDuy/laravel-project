@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\ServiceProvider;
+// use Modules\ModuleServiceProvider;
 
 return [
 
@@ -168,6 +169,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        Modules\ModuleServiceProvider::class,
+
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        // 'Datatables' => yajra\Datatables\Datatables::class,
     ])->toArray(),
 
     /*
