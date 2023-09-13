@@ -65,15 +65,14 @@
         $(document).ready(function() {
             $('#datatable').on('click', '.btn-remove', function() {
                 const id = $(this).data('id');
-                const urlDelete = $('#urlDelete').val(); // Lấy giá trị id từ thuộc tính data-id
-
-
+                var url = "{{ route('admin.categories.delete', ['id' => ':id']) }}";
+                    url = url.replace(':id', id); //  Thay thế ':id' bằng giá trị thực tế của 'id'
                 if (confirm('Bạn có chắc chắn muốn xóa?')) {
         
                     //    console.log(urlDelete +id);
                     $.ajax({
                        
-                        url: urlDelete + id,
+                        url: url,
 
                         type: 'DELETE',
 
